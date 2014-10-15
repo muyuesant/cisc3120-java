@@ -1,0 +1,39 @@
+import java.util.Vector;
+class savingDecorator implements CheckStrategy {
+
+    private Vector<String> targetVal = new Vector();
+    private Vector<String> otherVal = new Vector();
+	private CheckStrategy checker;
+	
+	public savingDecorator(CheckStrategy check) {	
+		checker = check;
+	}
+
+	public boolean check(String s) {	
+		boolean result =  checker.check(s);
+		if (result) {
+			targetVal.add(s);
+            //System.out.println("Now it is using saving decorator ");
+		}
+        else otherVal.add(s);
+		return result;
+	}
+
+	public int getTargetSize() {
+		return targetVal.size();        
+	}
+    
+    public Vector getTargetValVector(){
+        return targetVal;
+    }
+    
+    public int getOtherSize(){
+        return otherVal.size();
+    }
+    
+    public Vector getOtherValVector(){
+        return otherVal;
+    }
+
+
+}
