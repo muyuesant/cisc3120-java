@@ -13,7 +13,7 @@ public class Echo {
         in.close();
     }
 }*/
-packet Chen;
+package Chen;
 import java.io.*;
 import java.net.*;
 
