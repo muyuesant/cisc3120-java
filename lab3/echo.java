@@ -2,16 +2,15 @@ package Chen;
 
 import java.io.*;
 
-import java.io.*;
-public class Driver {
+public class Echo {
 	public static void main(String[] args) {
 		try {
-			printWhen(args[0]);
+			echoPrint(args[0]);
 		} catch (IOException e) {
 			System.err.println("OOPSie: problems reading the file.");
 		}
 	}
-	public static void printWhen(String filename) throws IOException 
+	public static void echoPrint(String filename) throws IOException 
 	{	
 		FileInputStream in0 = new FileInputStream(new File(filename));
 		InputStreamReader in1 = new InputStreamReader(in0);
@@ -21,5 +20,7 @@ public class Driver {
 			System.out.println(buffer);
 		}
 		infile.close();
+		in1.close();?
+		in0.close();?
 	}
 }
